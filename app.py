@@ -516,11 +516,20 @@ with control_col:
 
     st.write(f"Selected hour: {selected_hour}:00")
 
-    st.success(
-        f"💡 Best hour to charge today: {int(best_hour)}:00 "
-        f"({best_cost:.2f} € / {round(best_cost * 100)} cents)"
-    )
+        # NOTE TO SELF:
+    # Real best-hour optimization needs hourly spot prices and hourly solar data.
+    # For now, this section shows the selected tariff and explains the cheaper distribution window.
 
-    st.write(
-        "Note: best hour is currently based on the same solar value repeated for the whole day."
-    )
+    if 7 <= selected_hour < 22:
+        selected_tariff = "Day distribution"
+    else:
+        selected_tariff = "Night distribution"
+
+    st.info(f"Selected tariff: {selected_tariff}")
+
+    st.success("💡 Cheapest distribution window: 22:00–06:59")
+
+    st.warning(
+    "Note: On rainy or low-solar days, night charging may be cheaper. "
+    "However, always check the hourly spot price — daytime can sometimes be surprisingly cheap."
+)

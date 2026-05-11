@@ -67,6 +67,13 @@ The app calculates:
 - money saved by charging now
 - charging recommendation: BEST, GOOD, or WAIT
 
+## Excel model documentation
+
+The calculation model was first developed and tested in Excel before being implemented in Python and Streamlit. The Excel model helped define the variables, formulas, and comparison logic used in the app.
+
+- [Excel calculation model](docs/EV_Charging_Optimizer_Model.xlsx)
+- [Model explanation document](docs/EV_Charging_Optimizer_Excel_Model_Explanation.docx)
+
 ## Technologies used
 
 - Python

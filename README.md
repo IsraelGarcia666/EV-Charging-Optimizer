@@ -2,7 +2,7 @@
 
 ## Project overview
 
-EV Charging Optimizer is an individual Python data analytics project developed as part of my course final assignment. The project follows the spirit of Option 1, where the goal is to develop a data analytics program.
+EV Charging Optimizer is an individual Python data analytics project developed as part of my final assignment for the Basics of Programming course at Laurea University of Applied Sciences. The project follows the spirit of Option 1, where the goal is to develop a data analytics program.
 
 Instead of analyzing a static JSON dataset, this project analyzes EV charging cost scenarios using user-provided electricity price, solar production, and charging demand values. The result is an interactive Streamlit dashboard that helps compare charging an electric vehicle now versus charging later at night.
 
@@ -92,3 +92,62 @@ Install the required packages:
 ```bash
 pip install -r requirements.txt
 ````
+
+## Current limitations
+
+The current version is a working prototype, but it still has some limitations:
+
+- Electricity prices are entered manually. The app does not yet fetch real hourly spot prices automatically from an API.
+- Solar production is also entered manually. The app does not yet use hourly solar production data or solar forecast data.
+- The daily simulation chart is simplified because it repeats the same solar production value across the day.
+- The app compares charging now against a manually entered night electricity price, rather than automatically checking all future hours.
+- Mobile layout works, but the app is currently more comfortable to use on desktop or tablet screens.
+- Fixed monthly fees are not included in the hourly optimization model because they are paid regardless of charging time. They are better handled separately in a monthly cost estimate.
+
+## Future development
+
+Possible future improvements include:
+
+- Connect the app to an electricity price API to fetch real hourly spot prices automatically.
+- Add hourly solar production data or solar forecast data.
+- Improve the daily simulation so it can identify the real best charging window automatically.
+- Add a monthly cost estimate that includes fixed monthly fees separately from variable kWh-based costs.
+- Improve the mobile layout for smaller screens.
+- Add support for saving previous calculations.
+- Add a JSON or database-based data input option to better match future data analytics use cases.
+- Add clearer charts showing price, solar production, grid usage, and charging cost over time.
+
+## What I learned
+
+During this project, I learned how to turn a real-life problem into a working data analytics application. I first developed the calculation logic in Excel and then translated the model into Python and Streamlit.
+
+I practiced working with:
+
+- Python variables, formulas, and conditional logic
+- Streamlit input widgets and dashboard layout
+- pandas DataFrames for organizing simulation data
+- matplotlib charts for visualizing price and grid usage
+- Git and GitHub for version control
+- Streamlit Community Cloud for deploying the app online
+- HTML/CSS styling inside a Streamlit app
+
+I also learned that building a useful app is not only about writing code. A large part of the work was understanding the real-world pricing logic, checking the formulas, improving the user interface, and explaining the model clearly.
+
+One important learning outcome was the difference between fixed monthly fees and variable kWh-based costs. Fixed monthly fees are paid regardless of charging time, while variable costs affect the decision of whether charging now or later is cheaper.
+
+Another important learning outcome was understanding partial solar coverage. Even when solar production does not fully cover EV charging demand, it can still reduce grid usage enough to make charging now cheaper than charging later at night.
+
+## Use of AI assistance
+
+AI tools were used during this project as a learning and development support tool. The main project idea, energy-cost logic, Excel model decisions, testing, and final implementation choices were developed and reviewed by me.
+
+AI assistance was used for:
+
+- debugging Python and Streamlit errors
+- explaining code and formulas
+- improving wording and documentation
+- supporting layout and UX ideas
+- generating a futuristic background image for the app
+- helping structure the README and project explanation
+
+The calculations, project direction, testing decisions, and final submitted work were reviewed and adapted by me. The app was built as an individual course project with teacher approval.
